@@ -19,6 +19,10 @@ programa *linkee* adecuadamente?
 - Para cada uno de los ejecutables, ¿qué hace agregar la opción `-DTRAPFPE` al compilar? ¿En qué se diferencian 
 los mensajes de salida con y sin esa opción?
 
+#Respuestas
+
+Para compilar copie el archivo .c y .h de la carpeta fpe, genere el objeto correspondiente al compilarlo, y luego genere el ejecuble de los archivos test...c linkeando con el objeto creado antes, mas la libreria matematica -lm Con la opcion -DTRAPFPE defino el macro TRAPFPE y al hacer una operación no válida me genera el mensaje "Excepcion de coma flotante". Sin utilizar ese flag el resultado puede dar incorrecto sin saltarme error.
+
 
 ## Segmentation Fault
 
@@ -34,6 +38,16 @@ responder las siguientes preguntas:
 son: abran otra terminal distinta y fíjense si vuelve al mismo error, fíjense la diferencia
 entre `ulimit -a` antes y después de ejecutar `ulimit -s unlimited`, googleen, etcétera.
 - La "solución" anterior, ¿es una solución en el sentido de debugging?
+
+# Respuestas 
+
+Al poner ulimit -s unlimited, el programa no devuelve el error de segmention
+fault sino que comienza a correr normalmente. Al hacer eso, estamos poniendo
+el espacio de memoria stack ilimitada, por lo tanto las funciones no estan
+limitadas en memoria.
+No parece ser una solución muy correcta, ya que para q corra un programa
+deberiamos avisarle al usuario que primero setee la memoria de stack
+ilimitada, lo cual puede depender de si el sistema operativo lo permite.
 
 ## Valgrind
 
