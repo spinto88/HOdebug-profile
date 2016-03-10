@@ -19,6 +19,11 @@ programa *linkee* adecuadamente?
 - Para cada uno de los ejecutables, ¿qué hace agregar la opción `-DTRAPFPE` al compilar? ¿En qué se diferencian 
 los mensajes de salida con y sin esa opción?
 
+Para compilar copie el archivo .c y .h de la carpeta `fpe`, genere el objeto correspondiente al compilarlo,
+y luego genere el ejecuble de los archivos test...c linkeando con el objeto creado antes, mas la libreria matematica `-lm`
+Con la opcion `-DTRAPFPE` defino el macro TRAPFPE y al hacer una operación no válida me genera el mensaje "Excepcion de coma flotante".
+Sin utilizar ese flag el resultado puede dar incorrecto sin saltarme error.
+
 
 ## Segmentation Fault
 
