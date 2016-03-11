@@ -37,14 +37,14 @@ Con perf obtenemos la siguiente salida con -O0:
 
 y con -O3:
 
-´´´
+```
  44,47%  programa.e  programa.e         [.] main
  17,85%  programa.e  libm-2.19.so       [.] __sin_avx
  13,83%  programa.e  libm-2.19.so       [.] __ieee754_exp_avx
   9,61%  programa.e  [kernel.kallsyms]  [k] 0xffffffff8104f45a
   7,80%  programa.e  libm-2.19.so       [.] __GI___exp
   6,44%  programa.e  libm-2.19.so       [.] __kernel_standard
-´´´
+```
 
 En el ultimo nivel de optimizacion no se observa la funcion sqrt,
 se ve que al optimizar deja de llamarla externamente incluyendola
